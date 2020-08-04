@@ -1,0 +1,22 @@
+.c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.r {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.cc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
