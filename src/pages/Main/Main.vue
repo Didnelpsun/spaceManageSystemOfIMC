@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: 'LogIn',
+  name: 'Main',
   data () {
     return {
       log: {
