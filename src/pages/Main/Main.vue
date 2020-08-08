@@ -1,34 +1,12 @@
 <template>
-  <div class="main cc">
-    <div class="loginBoard">
-      <el-form :model="log" :rules="Rules" ref="form">
-        <el-form-item>
-        <el-row>
-          <el-col :span="24" class="h">
-            <el-form-item prop="account">
-              <el-input placeholder="请输入账号" prefix-icon="el-icon-s-custom" v-model="log.account" clearable></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="24" class="h">
-            <el-form-item prop="password">
-              <el-input placeholder="请输入密码" prefix-icon="el-icon-s-promotion" v-model="log.password" show-password clearable></el-input>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        </el-form-item>
-        <el-row>
-          <el-col :span="24">
-            <el-button type="success" style="width:20vw" class="b" @click="login">登陆</el-button>
-          </el-col>
-        </el-row>
-        <el-row type="flex" justify="end" style="margin-top:10px">
-          <el-col class="f" :span="10">
-            忘记密码？
-          </el-col>
-        </el-row>
-      </el-form>
-    </div>
-  </div>
+  <el-container class="container">
+    <el-aside width="250px" class="b"></el-aside>
+    <el-container>
+      <el-header class="lb" height="75px"></el-header>
+      <el-main></el-main>
+      <el-footer class="lb" height="75px"></el-footer>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -36,56 +14,24 @@ export default {
   name: 'Main',
   data () {
     return {
-      log: {
-        account: '',
-        password: ''
-      },
-      Rules: {
-        account: [
-          { required: true, message: '请输入账号', trigger: 'blur' },
-          { min: 3, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-        ],
-        password: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 3, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-        ]
-      }
     }
   },
   methods: {
-    login () {
-      this.$refs.form.validate(async (valid, mes) => {
-        if (!valid) { this.$message.warning('信息有误') } else {
-          console.log(this.log)
-        }
-      })
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
   @import "../../assets/sass/theme.scss";
-  @import url('../../assets/css/flex.css');
-  .main{
-    background-color: $b;
+  // @import url('../../assets/css/flex.css');
+  .container{
     width: 100vw;
     height: 100vh;
-    font-size: $bfont;
   }
-  .loginBoard{
-    background-color: rgba($color: $w, $alpha: 0.3);;
-    width: 20vw;
-    height: 15vw;
-    padding: 2 * $pa;
+  .b{
+    background-color: $b
   }
-  .h{
-    margin-top: $ma;
-    margin-bottom: 0.5*$ma;
-  }
-  .f{
-    font-size: $sfont;
-    color: $w;
-    cursor: pointer;
+  .lb{
+    background-color: $lb;
   }
 </style>
