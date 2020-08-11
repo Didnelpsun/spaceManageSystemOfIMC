@@ -1,12 +1,12 @@
 .c {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 .r {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
 }
 .cc {
   display: flex;
