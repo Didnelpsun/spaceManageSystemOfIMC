@@ -30,52 +30,56 @@ export default new Router({
       path: '/Main',
       name: 'Main',
       component: Main,
+      redirect: '/Main/PosterHomepage',
       meta: {
         keepAlive: true
       },
       children: [
         {
-          path: '/Poster/Homepage',
+          path: 'PosterHomepage',
           name: 'PosterHomePage',
           component: PosterHomePage
+          // meta: {
+          //   keepAlive: true
+          // }
         },
         {
-          path: '/Poster/Hole',
+          path: 'PosterHole',
           name: 'PosterHole',
           component: PosterHole
         },
         {
-          path: '/Introduct/Platform',
+          path: 'IntroductPlatform',
           name: 'IntroductPlatform',
           component: IntroductPlatform
         },
         {
-          path: '/Course/Edit',
+          path: 'CourseEdit',
           name: 'CourseEdit',
           component: CourseEdit
         },
         {
-          path: '/Arrange/Edit',
+          path: 'ArrangeEdit',
           name: 'ArrangeEdit',
           component: ArrangeEdit
         },
         {
-          path: '/Teacher/Edit',
+          path: 'TeacherEdit',
           name: 'TeacherEdit',
           component: TeacherEdit
         },
         {
-          path: '/Hole/Check',
+          path: 'HoleCheck',
           name: 'HoleCheck',
           component: HoleCheck
         },
         {
-          path: '/Reserve/Check',
+          path: 'ReserveCheck',
           name: 'ReserveCheck',
           component: ReserveCheck
         },
         {
-          path: '/Evaluate/Upload',
+          path: 'EvaluateUpload',
           name: 'EvaluateUpload',
           component: EvaluateUpload
         }

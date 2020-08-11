@@ -32,7 +32,7 @@ export default {
     },
     menuBack: {
       type: String,
-      default: '#409eff'
+      default: '#150e74'
     },
     uniqueOpened: {
       type: Boolean,

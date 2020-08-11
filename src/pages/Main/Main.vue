@@ -20,7 +20,7 @@
       <div style="width:88vw">
         <el-scrollbar>
           <keep-alive>
-            <router-view />
+            <router-view/>
           </keep-alive>
         </el-scrollbar>
       </div>
@@ -53,6 +53,9 @@ export default {
   },
   components: {
     Navigation
+  },
+  destroyed () {
+    console.log('main.destroy')
   }
 }
 </script>
@@ -70,7 +73,7 @@ export default {
   }
   .mainCon{
     height: 90vh;
-    // justify-content: space-between;
+    justify-content: space-between;
   }
   .b{
     overflow-x: hidden;
@@ -95,11 +98,11 @@ export default {
   background   : #ededed;
   }}
   .aside{
-    background-color: $b;
+    background-color: $dddb;
     overflow-x: hidden;
   }
   .lb{
     width: 100vw;
-    background-color: $lb;
+    background-color: $db;
   }
 </style>

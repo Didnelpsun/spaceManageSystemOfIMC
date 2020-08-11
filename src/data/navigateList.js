@@ -6,12 +6,12 @@ export let navigateList = [
     page: [
       {
         name: '首页海报',
-        url: '/Poster/Homepage',
+        url: 'PosterHomepage',
         icon: null
       },
       {
         name: '树洞海报',
-        url: '/Poster/Hole',
+        url: 'PosterHole',
         icon: null
       }
     ]
@@ -23,7 +23,7 @@ export let navigateList = [
     page: [
       {
         name: '平台介绍',
-        url: '/Introduct/Platform',
+        url: 'IntroductPlatform',
         icon: null
       }
     ]
@@ -35,7 +35,7 @@ export let navigateList = [
     page: [
       {
         name: '微课编辑',
-        url: '/Course/Edit',
+        url: 'CourseEdit',
         icon: null
       }
     ]
@@ -47,7 +47,7 @@ export let navigateList = [
     page: [
       {
         name: '值班表编辑',
-        url: '/Arrange/Edit',
+        url: 'ArrangeEdit',
         icon: null
       }
     ]
@@ -59,7 +59,7 @@ export let navigateList = [
     page: [
       {
         name: '老师信息编辑',
-        url: '/Teacher/Edit',
+        url: 'TeacherEdit',
         icon: null
       }
     ]
@@ -71,7 +71,7 @@ export let navigateList = [
     page: [
       {
         name: '树洞查看与回复',
-        url: '/Hole/Check',
+        url: 'HoleCheck',
         icon: null
       }
     ]
@@ -83,7 +83,7 @@ export let navigateList = [
     page: [
       {
         name: '预约查看与审核',
-        url: '/Reserve/Check',
+        url: 'ReserveCheck',
         icon: null
       }
     ]
@@ -95,7 +95,7 @@ export let navigateList = [
     page: [
       {
         name: '测评上传',
-        url: '/Evaluate/Upload',
+        url: 'EvaluateUpload',
         icon: null
       }
     ]
