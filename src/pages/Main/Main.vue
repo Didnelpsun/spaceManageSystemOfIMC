@@ -106,3 +106,9 @@ export default {
     background-color: $db;
   }
 </style>
+<style>
+  .el-scrollbar__wrap
+  {
+  overflow-x: hidden;
+  }
+</style>
