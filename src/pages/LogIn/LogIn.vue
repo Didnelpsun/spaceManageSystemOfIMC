@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import {login} from '../../api/api'
+import {mapMutations, mapGetters} from 'vuex'
 export default {
   name: 'LogIn',
   data () {
@@ -55,11 +57,42 @@ export default {
   methods: {
     login () {
       this.$refs.form.validate(async (valid, mes) => {
-        if (!valid) { this.$message.warning('信息有误') } else {
-          console.log(this.log)
+        if (!valid) { this.$message.warning('信息缺失') } else {
+          this.$axios.post(login, {
+            'sid': this.log.account,
+            'password': this.log.password
+          }).then(res => {
+            if (res.token) {
+              this.$message.success('登陆成功')
+              localStorage.setItem({'Token': res.token})
+              this.setToken(res.token)
+              console.log(res.token)
+              this.$router.push({
+                path: '/Main'
+              })
+            } else {
+              this.$message.error('登陆失败，账号有误')
+            }
+          }).catch(error => {
+            this.$message.error('登陆失败' + error)
+          })
         }
       })
+    },
+    ...mapMutations({
+      setToken: 'SET_TOKEN'
+    })
+  },
+  created () {
+    let token = localStorage.getItem('token')
+    if (token) {
+      // this.$router.push({
+      //   path: '/Main'
+      // })
     }
+  },
+  computed: {
+    ...mapGetters(['token'])
   }
 }
 </script>

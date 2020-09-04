@@ -53,9 +53,6 @@ export default {
   },
   components: {
     Navigation
-  },
-  destroyed () {
-    console.log('main.destroy')
   }
 }
 </script>
