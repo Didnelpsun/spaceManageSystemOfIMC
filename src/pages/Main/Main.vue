@@ -12,12 +12,12 @@
             <Navigation :list="navigateList" :collapse="collapse"/>
           </el-scrollbar>
         </div>
-        <div @click="changeCollapse" style="position:fixed; bottom:15px; left:15px" class="">
+        <div @click="changeCollapse" style="position:fixed; bottom:15px; left:15px" :hidden="true">
           <i v-if="collapse" class="el-icon-d-arrow-right" style="cursor: pointer;color:white"></i>
           <i v-else class="el-icon-d-arrow-left" style="cursor: pointer;color:white"></i>
         </div>
       </el-aside>
-      <div style="width:88vw">
+      <div>
         <el-scrollbar>
           <keep-alive>
             <router-view/>
@@ -70,7 +70,7 @@ export default {
   }
   .mainCon{
     height: 90vh;
-    justify-content: space-between;
+    // justify-content: space-between;
   }
   .b{
     overflow-x: hidden;

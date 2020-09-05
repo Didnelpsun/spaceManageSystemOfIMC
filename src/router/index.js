@@ -2,10 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LogIn from '@/pages/LogIn/LogIn'
 import Main from '@/pages/Main/Main'
-import PosterHomePage from '@/pages/Poster/HomePage'
-import PosterHole from '@/pages/Poster/Hole'
-import IntroductPlatform from '@/pages/Introduct/Platform'
-import CourseEdit from '@/pages/Course/Edit'
+import Poster from '@/pages/Poster/Poster'
+import Course from '@/pages/Course/Course'
 import ArrangeEdit from '@/pages/Arrange/Edit'
 import TeacherEdit from '@/pages/Teacher/Edit'
 import HoleCheck from '@/pages/Hole/Check'
@@ -30,33 +28,23 @@ export default new Router({
       path: '/Main',
       name: 'Main',
       component: Main,
-      redirect: '/Main/PosterHomepage',
+      redirect: '/Main/Poster',
       meta: {
         keepAlive: true
       },
       children: [
         {
-          path: 'PosterHomepage',
-          name: 'PosterHomePage',
-          component: PosterHomePage
+          path: 'Poster',
+          name: 'Poster',
+          component: Poster
           // meta: {
           //   keepAlive: true
           // }
         },
         {
-          path: 'PosterHole',
-          name: 'PosterHole',
-          component: PosterHole
-        },
-        {
-          path: 'IntroductPlatform',
-          name: 'IntroductPlatform',
-          component: IntroductPlatform
-        },
-        {
-          path: 'CourseEdit',
-          name: 'CourseEdit',
-          component: CourseEdit
+          path: 'Course',
+          name: 'Course',
+          component: Course
         },
         {
           path: 'ArrangeEdit',

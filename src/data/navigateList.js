@@ -5,25 +5,8 @@ export let navigateList = [
     color: '#e27964',
     page: [
       {
-        name: '首页海报',
-        url: 'PosterHomepage',
-        icon: null
-      },
-      {
-        name: '树洞海报',
-        url: 'PosterHole',
-        icon: null
-      }
-    ]
-  },
-  {
-    name: '介绍',
-    icon: 'el-icon-s-claim',
-    color: '#6de177',
-    page: [
-      {
-        name: '平台介绍',
-        url: 'IntroductPlatform',
+        name: '海报信息',
+        url: 'Poster',
         icon: null
       }
     ]
@@ -35,7 +18,7 @@ export let navigateList = [
     page: [
       {
         name: '微课编辑',
-        url: 'CourseEdit',
+        url: 'Course',
         icon: null
       }
     ]
