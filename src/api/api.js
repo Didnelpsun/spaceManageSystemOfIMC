@@ -8,6 +8,6 @@ export const login = `${baseUrl}/login/` // 登陆
 export const poster = `${baseUrl}/poster/info` // 海报
 
 // 微课
-export const courseList = `${baseUrl}/search/course` // 搜索课程
-export const courseInfo = `${baseUrl}/poster/info` // 获取海报课程信息
-export const 
+export const courseList = `${baseUrl}/search/course` // 搜索课程列表
+export const courseInfo = `${baseUrl}/course/info` // 获取课程信息
+export const addCourse = `${baseUrl}/upload/videolink` // 新增课程
