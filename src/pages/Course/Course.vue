@@ -11,7 +11,7 @@
           <el-button type="success" size="small" @click="getList">搜索关键字</el-button>
         </el-col>
         <el-col :span="6">
-          <el-button type="success" size="small" @click="getInfo(0)">添加微课</el-button>
+          <el-button type="success" size="small" @click="getInfo(0)">添加微课<i class="el-icon-plus"></i></el-button>
         </el-col>
       </el-row>
     </el-form>
@@ -50,12 +50,14 @@
       >
       </el-pagination>
       <el-dialog :visible.sync="showDialog">
+        <CourseInfo :state="state" :id="id" ref="Info" @close="close"/>
       </el-dialog>
   </div>
 </template>
 
 <script>
-import {courseList, courseInfo} from '@/api/api'
+import {courseList} from '@/api/api'
+import CourseInfo from '@/components/CourseInfo/CourseInfo'
 export default {
   name: 'Course',
   data () {
@@ -71,6 +73,7 @@ export default {
       loading: false,
       tableList: [],
       showDialog: false,
+      id: '',
       state: 0 // 0新增，1修改
     }
   },
@@ -98,23 +101,21 @@ export default {
     getInfo (row) {
       if (row) {
         this.state = 1
-        this.$axios.get(courseInfo + row.id).then(res => {
-          if (res.courseInfo) {
-            console.log(res.courseInfo)
-          } else {
-            this.$message.error('获取微课数据为空！')
-          }
-        }).catch(error => {
-          this.$message.error('获取微课数据失败：' + error)
-        })
+        this.id = row.id
       } else {
         this.state = 0
       }
       this.showDialog = true
+    },
+    close () {
+      this.showDialog = false
     }
   },
   activated () {
     this.getList()
+  },
+  components: {
+    CourseInfo
   }
 }
 </script>
