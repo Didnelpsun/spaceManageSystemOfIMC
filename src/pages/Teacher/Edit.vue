@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <el-scrollbar>
     <el-form :v-model="tableData" class="form">
       <el-form-item>
         <el-upload
@@ -13,10 +14,11 @@
           :show-file-list="false">
           <div v-if="tableData.avatar" style="positon:relative">
             <img :src="tableData.avatar" class="aimg">
-            <i class="el-icon-circle-close" style="position:absolute;z-index:5;bottom:0" @click.stop="getInitAvatar"/>
+            <i class="el-icon-circle-close" style="position:absolute;z-index:5;bottom:0" @click.stop="tableData.avatar = initAvatar"/>
           </div>
           <i v-else-if="!tableData.avatar" class="el-icon-user-solid"></i>
         </el-upload>
+        <span>用户头像</span>
       </el-form-item>
       <el-form-item label="用户ID">
         <el-input v-model="tableData.sid" readonly disabled suffix-icon="el-icon-info"></el-input>
@@ -35,7 +37,25 @@
           </el-option>
         </el-select>
       </el-form-item>
+      <el-form-item>
+        <el-upload
+          action="#"
+          :multiple="false"
+          :auto-upload="false"
+          accept="image/jpeg,image/jpg,image/png"
+          :on-change="uploadImg"
+          list-type="picture-card"
+          :show-file-list="false">
+          <div v-if="tableData.avatar" style="positon:relative">
+            <img :src="tableData.avatar" class="aimg">
+            <i class="el-icon-circle-close" style="position:absolute;z-index:5;bottom:0" @click.stop="tableData.avatar = initAvatar"/>
+          </div>
+          <i v-else-if="!tableData.avatar" class="el-icon-user-solid"></i>
+        </el-upload>
+        <span>用户背景</span>
+      </el-form-item>
     </el-form>
+    </el-scrollbar>
   </div>
 </template>
 
