@@ -17,7 +17,7 @@
           <i v-else class="el-icon-d-arrow-left" style="cursor: pointer;color:white"></i>
         </div>
       </el-aside>
-      <div>
+      <div style="position:absolute;right:0">
         <el-scrollbar>
           <keep-alive>
             <router-view/>

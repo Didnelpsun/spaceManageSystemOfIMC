@@ -11,3 +11,6 @@ export const poster = `${baseUrl}/poster/info` // 海报
 export const courseList = `${baseUrl}/search/course` // 搜索课程列表
 export const courseInfo = `${baseUrl}/course/info` // 获取课程信息
 export const addCourse = `${baseUrl}/upload/videolink` // 新增课程
+
+// 用户信息
+export const userInfo = `${baseUrl}/user/info/` // 用户信息

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div style="width:80vw">
+    <div style="width:80vw;display:flex;flex-direction:column;align-item:center">
       <el-row class="b" style="margin-top:30px">
         <el-col>
           <el-input
@@ -47,9 +47,9 @@ export default {
   data () {
     return {
       form: {
-        home: '',
+        home: '../../../static/image/bg.png',
         platform: '',
-        hole: ''
+        hole: '../../../static/image/bg.png'
       },
       homeList: [],
       holeList: [],
