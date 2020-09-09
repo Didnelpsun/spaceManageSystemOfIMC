@@ -1,4 +1,4 @@
-export let navigateList = [
+export const navigateList = [
   {
     name: '海报',
     icon: 'el-icon-picture-outline',
@@ -43,18 +43,6 @@ export let navigateList = [
       {
         name: '老师信息编辑',
         url: 'TeacherEdit',
-        icon: null
-      }
-    ]
-  },
-  {
-    name: '树洞',
-    icon: 'el-icon-service',
-    color: '#e264c3',
-    page: [
-      {
-        name: '树洞查看与回复',
-        url: 'HoleCheck',
         icon: null
       }
     ]

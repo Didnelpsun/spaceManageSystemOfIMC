@@ -9,12 +9,12 @@
           :multiple="false"
           :auto-upload="false"
           accept="image/jpeg,image/jpg,image/png"
-          :on-change="uploadImg"
+          :on-change="uploadAvatar"
           list-type="picture-card"
           :show-file-list="false">
           <div v-if="tableData.avatar" style="positon:relative">
             <img :src="tableData.avatar" class="aimg">
-            <i class="el-icon-circle-close" style="position:absolute;z-index:5;bottom:0" @click.stop="tableData.avatar = initAvatar"/>
+            <i class="el-icon-circle-close closeIcon" @click.stop="tableData.avatar = initAvatar"/>
           </div>
           <i v-else-if="!tableData.avatar" class="el-icon-user-solid"></i>
         </el-upload>
@@ -43,16 +43,19 @@
           :multiple="false"
           :auto-upload="false"
           accept="image/jpeg,image/jpg,image/png"
-          :on-change="uploadImg"
+          :on-change="uploadBackAvatar"
           list-type="picture-card"
           :show-file-list="false">
-          <div v-if="tableData.avatar" style="positon:relative">
-            <img :src="tableData.avatar" class="aimg">
-            <i class="el-icon-circle-close" style="position:absolute;z-index:5;bottom:0" @click.stop="tableData.avatar = initAvatar"/>
+          <div v-if="tableData.back_avatar" style="positon:relative">
+            <img :src="tableData.back_avatar" class="aimg">
+            <i class="el-icon-circle-close closeIcon" @click.stop="tableData.back_avatar = initBackAvatar"/>
           </div>
-          <i v-else-if="!tableData.avatar" class="el-icon-user-solid"></i>
+          <i v-else-if="!tableData.back_avatar" class="el-icon-picture"></i>
         </el-upload>
         <span>用户背景</span>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="success">提交编辑</el-button>
       </el-form-item>
     </el-form>
     </el-scrollbar>
@@ -92,9 +95,20 @@ export default {
         this.$message.error('用户信息获取错误：' + error)
       })
     },
-    uploadImg (file, fileList) {
+    uploadAvatar (file, fileList) {
       this.tableData.avatar = file.url
       fileList = fileList.pop()
+    },
+    uploadBackAvatar (file, fileList) {
+      this.tableData.back_avatar = file.url
+      fileList = fileList.pop()
+    },
+    postInfo () {
+      this.$axios.post(userInfo, this.tableData).then(res => {
+        this.$axios.success('用户信息编辑成功！')
+      }).catch(error => {
+        this.$message.error('用户信息编辑错误：' + error)
+      })
     }
   },
   activated () {
@@ -115,5 +129,10 @@ export default {
   .aimg{
     width:100%;
     height: 100%;
+  }
+  .closeIcon{
+    position:absolute;
+    z-index:5;
+    bottom:15px;
   }
 </style>

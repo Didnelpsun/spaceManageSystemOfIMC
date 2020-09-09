@@ -6,7 +6,6 @@ import Poster from '@/pages/Poster/Poster'
 import Course from '@/pages/Course/Course'
 import ArrangeEdit from '@/pages/Arrange/Edit'
 import TeacherEdit from '@/pages/Teacher/Edit'
-import HoleCheck from '@/pages/Hole/Check'
 import ReserveCheck from '@/pages/Reserve/Check'
 import EvaluateUpload from '@/pages/Evaluate/Upload'
 
@@ -55,11 +54,6 @@ export default new Router({
           path: 'TeacherEdit',
           name: 'TeacherEdit',
           component: TeacherEdit
-        },
-        {
-          path: 'HoleCheck',
-          name: 'HoleCheck',
-          component: HoleCheck
         },
         {
           path: 'ReserveCheck',
